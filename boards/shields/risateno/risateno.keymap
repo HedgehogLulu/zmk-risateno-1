@@ -45,7 +45,9 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp S>, <&kp TAB>;
+            bindings = <&kp>, <&kp>;
+            tap-bindings = <S>;
+            hold-bindings = <&kp TAB>;
         };
 
         ht_f_del: hold_tap_f_del {
@@ -53,7 +55,9 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp F>, <&kp DEL>;
+            bindings = <&kp>, <&kp>;
+            tap-bindings = <F>;
+            hold-bindings = <&kp DEL>;
         };
     };
 };
