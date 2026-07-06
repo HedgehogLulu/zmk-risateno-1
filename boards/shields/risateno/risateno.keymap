@@ -6,8 +6,13 @@
 
 // CONFIG
 #define COMBO_TIMEOUT 70
-#define COMBO_LAYERS 0
+#define COMBO_LAYERS 0 1 2
 #define STICKY_TIMEOUT 500
+
+// LAYERS
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
 
 // LEFT SIDE
 #define TLP 0 // TOP
@@ -33,6 +38,25 @@
 #define ROT 19 // O-THUMB
 #define RIT 18 // I-THUMB
 
+/ {
+    behaviors {
+        ht_s_tab: hold_tap_s_tab {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_S_TAB";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp S>, <&kp TAB>;
+        };
+
+        ht_f_del: hold_tap_f_del {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_F_DEL";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp F>, <&kp DEL>;
+        };
+    };
+};
 
 &sk {
     release-after-ms = <STICKY_TIMEOUT>;
@@ -53,10 +77,38 @@
     compatible = "zmk,keymap";
 
     default_layer {
+    // Левая рука                   |  Правая рука
+    // | TLP | TLR | TLM | TLI |   | TRI | TRM | TRR | TRP |
+    // | BLP | BLR | BLM | BLI |   | BRI | BRM | BRR | BRP |
+    //             | LOT | LIT |   | RIT | ROT |
       bindings = <
-        &none &none &none &none               &none &none &none &none     
-        &none &none &none &none               &none &none &none &none     
-                          &none &none   &none &none &none &none     
+        &kp Q &kp W &kp E &kp R               &kp U &kp I &kp O &kp P
+        &mt LSHIFT A &kp S &mt LALT D &kp F   &mt LGUI J &kp K &kp L &kp SEMI
+                          &mo 1 &kp SPACE         &kp RET &mo 2
+      >;
+    };
+    lower_layer {
+    // Левая рука                   |  Правая рука
+    // Цифры и символы (зажать &mo 1)
+    // |  1  |  2  |  3  |  4  |   |  5  |  6  |  7  |  8  |
+    // |  !  |  @  |  #  |  $  |   |  %  |  ^  |  &  |  *  |
+    //          |     |     |     |     |     |
+      bindings = <
+        &kp N1 &kp N2 &kp N3 &kp N4               &kp N5 &kp N6 &kp N7 &kp N8
+        &kp EXCL &kp AT &kp HASH &kp DOLLAR       &kp PERCENT &kp CARET &kp AMPS &kp STAR
+                          &trans &trans        &trans &trans
+      >;
+    };
+    raise_layer {
+    // Левая рука                   |  Правая рука
+    // Навигация (зажать &mo 2)
+    // | F1  | F2  | F3  | F4  |   | F5  | F6  | F7  | F8  |
+    // |HOME |PREV |PLAY |NEXT |   |LEFT |DOWN | UP  |RIGHT|
+    //          |     |     |     |     |     |
+      bindings = <
+        &kp F1 &kp F2 &kp F3 &kp F4               &kp F5 &kp F6 &kp F7 &kp F8
+        &kp HOME &kp C_PREV &kp C_PLAY &kp C_NEXT      &kp LEFT &kp DOWN &kp UP &kp RIGHT
+                          &trans &trans        &trans &trans
       >;
     };
   };
