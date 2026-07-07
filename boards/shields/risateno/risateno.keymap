@@ -35,11 +35,6 @@
 / {
   combos {
     compatible = "zmk,combos";
-    #ifdef IS_RISATENO_RIGHT
-      #include "chords_right.dtsi"
-    #else
-      #include "chords.dtsi"
-    #endif
   };
 
   keymap {
