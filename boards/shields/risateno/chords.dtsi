@@ -25,50 +25,44 @@ combo_ctrl_x {
 combo_ctrl_z {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp LC(Z)>;
-    key-positions = <LOT LIT>;
+    key-positions = <BLI BLM>;
     layers = <COMBO_LAYERS>;
 };
 combo_esc {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp ESC>;
-    key-positions = <TLP BLP>;
-    layers = <COMBO_LAYERS>;
-};
-combo_win_space {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp LGUI &kp SPACE>;  // Win+Space
-    key-positions = <TLP LIT>;
-    layers = <COMBO_LAYERS>;
+    key-positions = <TLI LIT>;
+    layers = <0>;
 };
 combo_l_B {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp B>;
     key-positions = <TLP LIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 combo_l_C {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp C>;
     key-positions = <TLR LIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 combo_l_V {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp V>;
     key-positions = <TLM LIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 
 combo_l_X {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp X>;
     key-positions = <BLR LIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 
 combo_l_Z {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp Z>;
     key-positions = <BLP LIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };

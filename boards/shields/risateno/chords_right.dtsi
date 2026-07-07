@@ -2,39 +2,39 @@ combo_r_N {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp N>;
     key-positions = <TRI RIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 combo_r_M {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp M>;
     key-positions = <TRM RIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 
 combo_r_Y {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp Y>;
     key-positions = <TRR RIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 combo_r_G {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp G>;
     key-positions = <BRI RIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 combo_r_H {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp H>;
     key-positions = <BRM RIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 
 combo_r_T {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp T>;
     key-positions = <BRR RIT>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
 combo_bootloader {
     timeout-ms = <COMBO_TIMEOUT>;
@@ -58,5 +58,5 @@ combo_bt_clear {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&bt BT_CLR>;
     key-positions = <BRI BRR>;
-    layers = <COMBO_LAYERS>;
+    layers = <0>;
 };
