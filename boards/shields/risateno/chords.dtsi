@@ -1,68 +1,44 @@
-combo_ctrl_a {
+combo_enter {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp LC(A)>;
-    key-positions = <TLR TLM>;
-    layers = <COMBO_LAYERS>;
-};
-combo_ctrl_c {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp LC(C)>;
-    key-positions = <TLM TLI>;
-    layers = <COMBO_LAYERS>;
-};
-combo_ctrl_v {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp LC(V)>;
-    key-positions = <BLP BLR>;
-    layers = <COMBO_LAYERS>;
-};
-combo_ctrl_x {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp LC(X)>;
+    bindings = <&kp RET>;
     key-positions = <BLM BLI>;
-    layers = <COMBO_LAYERS>;
-};
-combo_ctrl_z {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp LC(Z)>;
-    key-positions = <BLI BLM>;
-    layers = <COMBO_LAYERS>;
+    layers = <0 1>;
 };
 combo_esc {
     timeout-ms = <COMBO_TIMEOUT>;
     bindings = <&kp ESC>;
     key-positions = <TLI LIT>;
-    layers = <0>;
+    layers = <0 1>;
 };
-combo_l_B {
+combo_email {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp B>;
+    bindings = <&macro_email>;
+    key-positions = <LOT LIT>;
+    layers = <0 1>;
+};
+combo_bootloader {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&bootloader>;
     key-positions = <TLP LIT>;
     layers = <0>;
 };
-combo_l_C {
+combo_bt0 {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp C>;
-    key-positions = <TLR LIT>;
-    layers = <0>;
-};
-combo_l_V {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp V>;
-    key-positions = <TLM LIT>;
+    bindings = <&bt BT_SEL 0>;
+    key-positions = <BLP LIT>;
     layers = <0>;
 };
 
-combo_l_X {
+combo_bt1 {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp X>;
+    bindings = <&bt BT_SEL 1>;
     key-positions = <BLR LIT>;
     layers = <0>;
 };
 
-combo_l_Z {
+combo_bt_clear {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp Z>;
-    key-positions = <BLP LIT>;
+    bindings = <&bt BT_CLR>;
+    key-positions = <BLI BLR>;
     layers = <0>;
 };

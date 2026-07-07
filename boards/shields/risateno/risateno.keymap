@@ -6,37 +6,35 @@
 
 // CONFIG
 #define COMBO_TIMEOUT 90
-#define COMBO_LAYERS 0 1 2
+#define COMBO_LAYERS 0 1
 #define STICKY_TIMEOUT 500
 
 // LAYERS
 #define DEFAULT 0
 #define LOWER   1
-#define RAISE   2
-
 // LEFT SIDE
 #define TLP 0 // TOP
 #define TLR 1 // TOP
 #define TLM 2 // TOP
 #define TLI 3 // TOP
-#define BLP 8 // BOTTOM
-#define BLR 9 // BOTTOM
-#define BLM 10 // BOTTOM
-#define BLI 11 // BOTTOM
-#define LOT 16 // O-THUMB
-#define LIT 17 // I-THUMB
+#define BLP 4 // BOTTOM
+#define BLR 5 // BOTTOM
+#define BLM 6 // BOTTOM
+#define BLI 7 // BOTTOM
+#define LOT 8 // O-THUMB
+#define LIT 9 // I-THUMB
 
 // RIGHT SIDE
-#define TRP 7 // TOP
-#define TRR 6 // TOP
-#define TRM 5 // TOP
-#define TRI 4 // TOP
-#define BRP 15 // BOTTOM
-#define BRR 14 // BOTTOM
-#define BRM 13 // BOTTOM
-#define BRI 12 // BOTTOM
-#define ROT 19 // O-THUMB
-#define RIT 18 // I-THUMB
+#define TRP 10 // TOP
+#define TRR 11 // TOP
+#define TRM 12 // TOP
+#define TRI 13 // TOP
+#define BRP 14 // BOTTOM
+#define BRR 15 // BOTTOM
+#define BRM 16 // BOTTOM
+#define BRI 17 // BOTTOM
+#define ROT 18 // O-THUMB
+#define RIT 19 // I-THUMB
 
 / {
     behaviors {
@@ -55,6 +53,17 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+            macro_email: macro_email {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &kp T &kp I &kp R &kp E &kp J &kp K &kp I &kp N &kp A &kp N0 &kp N0 &kp N5
+            &kp AT
+            &kp G &kp M &kp A &kp I &kp L
+            &kp DOT
+            &kp C &kp O &kp M
+        >;
+    };
     };
 };
 &sk {
@@ -81,32 +90,15 @@
     // | BLP | BLR | BLM | BLI |   | BRI | BRM | BRR | BRP |
     //             | LOT | LIT |   | RIT | ROT |
       bindings = <
-        &kp Q &kp W &kp E &kp R                                  &kp U &kp I &kp O &kp P
-        &mt LSHIFT A &ht_s_tab S TAB &mt LALT D &ht_f_del F DEL  &mt LGUI J &mt LSHIFT K &kp L &kp SEMI
-                                               &mo 1 &kp SPACE    &kp RET &mo 2
+        &kp Z &kp X &kp C &kp V                                  &trans &trans &trans &trans
+        &mt LSHIFT A &ht_s_tab S TAB &mt LCTRL D &ht_f_del F DEL  &trans &trans &trans &trans
+                                               &mo 1 &kp SPACE    &trans &trans
       >;
     };
     lower_layer {
-    // Левая рука                   |  Правая рука
-    // Цифры и символы (зажать &mo 1)
-    // |  1  |  2  |  3  |  4  |   |  5  |  6  |  7  |  8  |
-    // |  !  |  @  |  #  |  $  |   |  %  |  ^  |  &  |  *  |
-    //          |     |     |     |     |     |
       bindings = <
-        &kp N1 &kp N2 &kp N3 &kp N4               &kp N5 &kp N6 &kp N7 &kp N8
-        &kp EXCL &kp AT &kp HASH &kp DOLLAR       &kp PERCENT &kp CARET &kp AMPS &kp STAR
-                          &trans &trans        &trans &trans
-      >;
-    };
-    raise_layer {
-    // Левая рука                   |  Правая рука
-    // Навигация (зажать &mo 2)
-    // | F1  | F2  | F3  | F4  |   | F5  | F6  | F7  | F8  |
-    // |HOME |PREV |PLAY |NEXT |   |LEFT |DOWN | UP  |RIGHT|
-    //          |     |     |     |     |     |
-      bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4               &kp F5 &kp F6 &kp F7 &kp F8
-        &kp HOME &kp C_PREV &kp C_PLAY &kp C_NEXT      &kp LEFT &kp DOWN &kp UP &kp RIGHT
+        &kp F1 &kp F2 &kp F3 &kp F4              &trans &trans &trans &trans
+        &kp HOME &kp C_PREV &kp C_PLAY &kp C_NEXT       &trans &trans &trans &trans
                           &trans &trans        &trans &trans
       >;
     };
