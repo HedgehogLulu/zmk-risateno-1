@@ -5,7 +5,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // CONFIG
-#define COMBO_TIMEOUT 70
+#define COMBO_TIMEOUT 90
 #define COMBO_LAYERS 0 1
 #define STICKY_TIMEOUT 500
 
@@ -41,17 +41,17 @@
         ht_s_tab: hold_tap_s_tab {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <180>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp S>, <&kp TAB>;
         };
 
         ht_f_del: hold_tap_f_del {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <180>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp F>, <&kp BSPC>;
         };
             macro_email: macro_email {
         compatible = "zmk,behavior-macro";
@@ -67,9 +67,9 @@
         ht_media_play: hold_tap_media_play {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
-        tapping-term-ms = <150>;
+        tapping-term-ms = <180>;
         flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
+        bindings = <&kp C_PLAY>, <&kp C_PAUSE>;
         };
     };
 };

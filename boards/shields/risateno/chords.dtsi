@@ -1,29 +1,51 @@
-#define SCOMBO(NAME, BINDING, KEYPOS, LAYER_LIST) \
-combo_sys_##NAME { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <BINDING>; \
-	key-positions = <KEYPOS>; \
-	layers = <LAYER_LIST>; \
+// chords.dtsi
+
+combo_enter {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&kp RET>;
+    key-positions = <BLM BLI>;
+    layers = <COMBO_LAYERS>;
 };
 
-combo_l_space {
-	timeout-ms = <COMBO_TIMEOUT>;
-	bindings = <&kp SPACE>;
-	key-positions = <LIT>;
-	layers = <COMBO_LAYERS>;
+combo_esc {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&kp ESC>;
+    key-positions = <TLI LIT>;
+    layers = <COMBO_LAYERS>;
 };
 
-combo_l_bspc {
-	timeout-ms = <COMBO_TIMEOUT>;
-	bindings = <&kp BSPC>;
-	key-positions = <LOT>;
-	layers = <COMBO_LAYERS>;
+combo_email {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&macro_email>;
+    key-positions = <LOT LIT>;
+    layers = <COMBO_LAYERS>;
 };
-//      (Имя,         Действие,       Клавиши,   Слои)
-SCOMBO(enter,        &kp RET,        BLM BLI,   0 1)
-SCOMBO(esc,          &kp ESC,        TLI LIT,   0 1)
-SCOMBO(email,        &macro_email,   LOT LIT,   0 1)
-SCOMBO(bootloader,   &bootloader,    TLP LIT,   0)
-SCOMBO(bt0,          &bt BT_SEL 0,   BLP LIT,   0)
-SCOMBO(bt1,          &bt BT_SEL 1,   BLR LIT,   0)
-SCOMBO(bt_clear,     &bt BT_CLR,     BLI BLR,   0)
+
+combo_bootloader {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&bootloader>;
+    key-positions = <TLP LIT>;
+    layers = <0>;
+};
+
+// Bluetooth
+combo_bt0 {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&bt BT_SEL 0>;
+    key-positions = <BLP LIT>;
+    layers = <COMBO_LAYERS>;
+};
+
+combo_bt1 {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&bt BT_SEL 1>;
+    key-positions = <BLR LIT>;
+    layers = <COMBO_LAYERS>;
+};
+
+combo_bt_clear {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&bt BT_CLR>;
+    key-positions = <BLI BLR>;
+    layers = <COMBO_LAYERS>;
+};
