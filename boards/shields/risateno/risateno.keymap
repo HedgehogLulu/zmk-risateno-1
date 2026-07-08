@@ -86,7 +86,7 @@
       #include "chords_right.dtsi"
     #else
       combo_enter {
-          timeout-ms = <COMBO_TIMEOUT>;   
+          timeout-ms = <COMBO_TIMEOUT>;
           bindings = <&kp RET>;
           key-positions = <BLM BLI>;
           layers = <0 1>;
@@ -138,9 +138,9 @@
     // | BLP | BLR | BLM | BLI |   | BRI | BRM | BRR | BRP |
     //             | LOT | LIT |   | RIT | ROT |
       bindings = <
-        &kp Z &kp X &kp C &kp V                                  &trans &trans &trans &trans
-        &mt LSHIFT A &ht_s_tab TAB S  &mt LCTRL D &ht_f_del BSPC F   &trans &trans &trans &trans
-                                               &mo 1 &kp SPACE    &trans &trans
+                &kp Z &kp X &kp C &kp V &trans &trans &trans &trans
+        &kp A &kp S &kp D &kp F &trans &trans &trans &trans   // ← временно обычные клавиши
+                                               &mo 1 &kp SPACE &trans &trans
       >;
     };
     lower_layer {
