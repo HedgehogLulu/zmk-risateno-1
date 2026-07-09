@@ -3,7 +3,6 @@ combo_enter {
     bindings = <&kp RET>;
     key-positions = <BLM BLI>;
     layers = <0 1>;
-};
 
 combo_esc {
     timeout-ms = <COMBO_TIMEOUT>;
