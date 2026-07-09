@@ -1,48 +1,99 @@
-combo_enter {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp RET>;
-    key-positions = <BLM BLI>;
-    layers = <0 1>;
+// chords.dtsi — продвинутый вариант с TCOMBO
+
+#define TCOMBO(NAME, BINDINGS, INNER_BINDINGS, OUTER_BINDINGS, BOTH_BINDINGS, LEFT_KEYPOS, RIGHT_KEYPOS) \
+combo_l_##NAME { \
+    timeout-ms = <COMBO_TIMEOUT>; \
+    bindings = <BINDINGS>; \
+    key-positions = <LEFT_KEYPOS>; \
+    layers = <COMBO_LAYERS>; \
+}; \
+combo_li_##NAME { \
+    timeout-ms = <COMBO_TIMEOUT>; \
+    bindings = <INNER_BINDINGS>; \
+    key-positions = <LEFT_KEYPOS LIT>; \
+    layers = <COMBO_LAYERS>; \
+}; \
+combo_lo_##NAME { \
+    timeout-ms = <COMBO_TIMEOUT>; \
+    bindings = <OUTER_BINDINGS>; \
+    key-positions = <LEFT_KEYPOS LOT>; \
+    layers = <COMBO_LAYERS>; \
+}; \
+combo_lb_##NAME { \
+    timeout-ms = <COMBO_TIMEOUT>; \
+    bindings = <BOTH_BINDINGS>; \
+    key-positions = <LEFT_KEYPOS LIT LOT>; \
+    layers = <COMBO_LAYERS>; \
+}; \
+combo_r_##NAME { \
+    timeout-ms = <COMBO_TIMEOUT>; \
+    bindings = <BINDINGS>; \
+    key-positions = <RIGHT_KEYPOS>; \
+    layers = <COMBO_LAYERS>; \
+}; \
+combo_ri_##NAME { \
+    timeout-ms = <COMBO_TIMEOUT>; \
+    bindings = <INNER_BINDINGS>; \
+    key-positions = <RIGHT_KEYPOS RIT>; \
+    layers = <COMBO_LAYERS>; \
+}; \
+combo_ro_##NAME { \
+    timeout-ms = <COMBO_TIMEOUT>; \
+    bindings = <OUTER_BINDINGS>; \
+    key-positions = <RIGHT_KEYPOS ROT>; \
+    layers = <COMBO_LAYERS>; \
+}; \
+combo_rb_##NAME { \
+    timeout-ms = <COMBO_TIMEOUT>; \
+    bindings = <BOTH_BINDINGS>; \
+    key-positions = <RIGHT_KEYPOS RIT ROT>; \
+    layers = <COMBO_LAYERS>; \
 };
 
-combo_esc {
+combo_l_space {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp ESC>;
-    key-positions = <TLI LIT>;
-    layers = <0 1>;
+    bindings = <&kp SPACE>;
+    key-positions = <LIT>;
+    layers = <COMBO_LAYERS>;
 };
 
-combo_email {
+combo_r_space {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&macro_email>;
-    key-positions = <LOT LIT>;
-    layers = <0 1>;
+    bindings = <&kp SPACE>;
+    key-positions = <RIT>;
+    layers = <COMBO_LAYERS>;
 };
 
-combo_bootloader {
+combo_l_bspc {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&bootloader>;
-    key-positions = <TLP LIT>;
-    layers = <0>;
+    bindings = <&kp BSPC>;
+    key-positions = <LOT>;
+    layers = <COMBO_LAYERS>;
 };
 
-combo_bt0 {
+combo_r_bspc {
     timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&bt BT_SEL 0>;
-    key-positions = <BLP LIT>;
-    layers = <0>;
+    bindings = <&kp BSPC>;
+    key-positions = <ROT>;
+    layers = <COMBO_LAYERS>;
 };
 
-combo_bt1 {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&bt BT_SEL 1>;
-    key-positions = <BLR LIT>;
-    layers = <0>;
-};
 
-combo_bt_clear {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&bt BT_CLR>;
-    key-positions = <BLI BLR>;
-    layers = <0>;
-};
+// Базовые
+TCOMBO(enter, &kp RET, &none, &none, &none, <BLM BLI>, <BRM BRI>)
+TCOMBO(esc,   &kp ESC, &none, &none, &none, <TLI LIT>, <TRI RIT>)
+TCOMBO(email, &macro_email, &none, &none, &none, <LOT LIT>, <ROT RIT>)
+
+// Bootloader и Bluetooth
+TCOMBO(bootloader, &bootloader, &none, &none, &none, <TLP LIT>, <TRP RIT>)
+TCOMBO(bt0, &bt BT_SEL 0, &none, &none, &none, <BLP LIT>, <BRP ROT>)
+TCOMBO(bt1, &bt BT_SEL 1, &none, &none, &none, <BLR LIT>, <BRR ROT>)
+TCOMBO(bt_clear, &bt BT_CLR, &none, &none, &none, <BLI BLR>, <BRI BRR>)
+
+// Правая сторона (буквы)
+TCOMBO(r_n, &kp N, &none, &none, &none, <>, <TRI RIT>)
+TCOMBO(r_m, &kp M, &none, &none, &none, <>, <TRM RIT>)
+TCOMBO(r_y, &kp Y, &none, &none, &none, <>, <TRR RIT>)
+TCOMBO(r_g, &kp G, &none, &none, &none, <>, <BRI RIT>)
+TCOMBO(r_h, &kp H, &none, &none, &none, <>, <BRM RIT>)
+TCOMBO(r_t, &kp T, &none, &none, &none, <>, <BRR RIT>)
