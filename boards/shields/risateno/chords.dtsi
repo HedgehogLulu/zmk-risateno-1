@@ -1,47 +1,6 @@
 combo_enter {
-    timeout-ms = <COMBO_TIMEOUT>;
+    timeout-ms = <350>;   // было 200, сделай больше
     bindings = <&kp RET>;
-    key-positions = <BLM BLI>;
+    key-positions = <6 7>;   // BLM + BLI
     layers = <0 1>;
-
-combo_esc {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&kp ESC>;
-    key-positions = <TLI LIT>;
-    layers = <0 1>;
-};
-
-combo_email {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&macro_email>;
-    key-positions = <LOT LIT>;
-    layers = <0 1>;
-};
-
-combo_bootloader {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&bootloader>;
-    key-positions = <TLP LIT>;
-    layers = <0>;
-};
-
-combo_bt0 {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&bt BT_SEL 0>;
-    key-positions = <BLP LIT>;
-    layers = <0>;
-};
-
-combo_bt1 {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&bt BT_SEL 1>;
-    key-positions = <BLR LIT>;
-    layers = <0>;
-};
-
-combo_bt_clear {
-    timeout-ms = <COMBO_TIMEOUT>;
-    bindings = <&bt BT_CLR>;
-    key-positions = <BLI BLR>;
-    layers = <0>;
 };

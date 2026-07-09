@@ -78,17 +78,9 @@
     quick-release;
 };
 / {
-         combos {
+    combos {
         compatible = "zmk,combos";
-        global-quick-tap;
-        global-quick-tap-ms = <200>;
-
-        combo_test {
-            timeout-ms = <300>;
-            bindings = <&kp RET>;
-            key-positions = <6 7>;
-            layers = <0 1>;
-        };
+        #include "chords.dtsi"
     };
 
 
