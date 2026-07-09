@@ -10,14 +10,14 @@
         };
 
         combo_enter {
-            timeout-ms = <200>;
-            key-positions = <4 6>;
+            timeout-ms = <300>;  
+            key-positions = <6 7>;
             bindings = <&kp RET>;
         };
 
         combo_esc {
-            timeout-ms = <200>;
-            key-positions = <5 7>;
+            timeout-ms = <300>;
+            key-positions = <4 5>;
             bindings = <&kp ESC>;
         };
     };
