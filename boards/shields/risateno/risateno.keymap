@@ -76,7 +76,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "hold-preferred";
-            bindings = <&kp F1>, <&kp Z>;  /
+            bindings = <&kp F1>, <&kp Z>;  
         };
 
         ht_f2: ht_f2 {
