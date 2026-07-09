@@ -1,0 +1,38 @@
+combo_r_N {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&kp N>;
+    key-positions = <TRI RIT>;
+    layers = <0>;
+};
+combo_r_M {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&kp M>;
+    key-positions = <TRM RIT>;
+    layers = <0>;
+};
+
+combo_r_Y {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&kp Y>;
+    key-positions = <TRR RIT>;
+    layers = <0>;
+};
+combo_r_G {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&kp G>;
+    key-positions = <BRI RIT>;
+    layers = <0>;
+};
+combo_r_H {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&kp H>;
+    key-positions = <BRM RIT>;
+    layers = <0>;
+};
+
+combo_r_T {
+    timeout-ms = <COMBO_TIMEOUT>;
+    bindings = <&kp T>;
+    key-positions = <BRR RIT>;
+    layers = <0>;
+};
